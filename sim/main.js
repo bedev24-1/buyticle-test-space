@@ -529,7 +529,7 @@ function boucle(now) {
   client.update(d2); rabatteur.update(d2);
   vendeurs.forEach((v) => v.update(d2));
   foule.update(d2);
-  majCam(dt);
+  if (!window.__fige) majCam(dt);
   majBulles(dt);
 
   remplissage.position.copy(cam.position).add(V(0, 1.4, 0));
@@ -558,6 +558,9 @@ $('bRe').onclick = () => { sauter(0); joue = true;
 $('bVit').onclick = () => { vit = vit === 1 ? 2 : vit === 2 ? 4 : 1; $('bVit').textContent = 'Vitesse ×' + vit; };
 
 window.__saut = (i) => sauter(i);
+window.__cam = () => cam;
+window.__client = () => client;
+window.__fige = false;
 window.__etat = () => ({ i: idx, n: SC.length });
 
 resize();
