@@ -46,7 +46,16 @@ nulle part. Copiez `marche-de-mboppi/meta.js`, changez les valeurs, et la
 simulation apparaît dans la liste.
 
 Le fichier `index.html` doit être **autonome** : il est chargé dans une iframe,
-sans build ni dépendance. Celui de Mboppi ne fait aucune requête réseau.
+sans build ni dépendance, et ne fait aucune requête réseau.
+
+Celui de Mboppi est produit par un second build. Sa source vit dans `sim/`
+(Three.js, WebGL) et `npm run build:sim` la compile en un seul fichier de
+643 Ko, moteur et textures inlinés. `npm run build` enchaîne les deux.
+
+```bash
+npm run dev:sim     # travailler la simulation seule, rechargement à chaud
+npm run build:sim   # produire le fichier autonome
+```
 
 ## Déployer sur Vercel
 

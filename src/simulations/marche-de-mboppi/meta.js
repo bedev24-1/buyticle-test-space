@@ -15,7 +15,7 @@ export default {
   cree: "2026-08-14",
   periode: "Mois type · 26 jours ouvrés",
   statut: "Validée",
-  version: "1.2",
+  version: "2.0",
   auteur: "Direction stratégie",
 
   objectif:
@@ -160,7 +160,7 @@ export default {
   },
 
   fichiers: [
-    { nom: "Simulation animée", f: "index.html", type: "HTML autonome", taille: "53 Ko" },
+    { nom: "Simulation 3D", f: "index.html", type: "WebGL autonome", taille: "643 Ko" },
     { nom: "Stratégie complète", f: "strategie-le-relais.docx", type: "Word", taille: "34 Ko" },
   ],
 };
