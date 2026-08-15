@@ -79,9 +79,9 @@ export class Phone {
         <div class="ph-h" style="text-align:center">Client envoyé</div>
         <div class="ph-card" style="text-align:center">
           <div class="ph-prod">${data.nom}</div>
-          <div class="ph-var">à ${data.m} m · remise 3 % pour le client</div>
+          <div class="ph-var">à ${data.m} m · remise 5 % pour le client</div>
         </div>
-        <div class="ph-gain">+ 3 360 F pour toi si la vente se fait</div>`;
+        <div class="ph-gain">+ 2 400 F de bon pour toi si la vente se fait</div>`;
     }
   }
 
@@ -126,7 +126,7 @@ export class Phone {
           <div class="ph-var">Montre ton bon au vendeur</div>
         </div>
         <div class="ph-code big"><b>${data.code}</b></div>
-        <div class="ph-gain">48 000 F − 3 % = 46 560 F</div>`;
+        <div class="ph-gain">Affiché 54 240 F · ton bon − 2 400 F · tu paies 51 840 F</div>`;
     }
   }
 }

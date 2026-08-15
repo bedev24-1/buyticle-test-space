@@ -374,7 +374,7 @@ function batir() {
       phone.vendeur('envoye', { nom: 'Second Life', m: 130 });
       plan(V(pMoi.x + 3.0, 1.72, 1.4), V(pMoi.x + 0.1, 1.52, 4.5), 32, 3.6);
       narr('Le client prend le sien', 'Il reçoit le chemin et sa remise.',
-           'Second Life, à 130 mètres. Un bon de 3 %, valable 48 heures, et seulement là-bas.');
+           'Second Life, à 130 mètres. Un bon de 5 %, valable 48 heures, et seulement là-bas.');
       poserTrace(dMoi, dDest);
     },
     up(t) {
@@ -415,14 +415,14 @@ function batir() {
       phone.client('arrive', { nom: 'Second Life', code: 'BT-4471' });
       plan(V(pDest.x + 5.0, 1.95, -0.6), V(pDest.x + 0.2, 1.60, 4.9), 36, 4.2);
       narr('Il arrive', 'Il montre son code. La vente se fait.',
-           '48 000 F de Timberland, pointure 45.');
+           'Timberland 45. Prix net de Second Life : 48 000 F. Affiché 54 240 F.');
     },
     up(t) {
       if (t > 3.2 && !this._a) { this._a = 1; dire(client, 'Je viens de chez Essomba.', 3); }
       if (t > 6 && !this._b) { this._b = 1;
-        dire(DEST.vendeur, 'Je te les fais à 46 560.', 3, 'v');
+        dire(DEST.vendeur, 'Avec ton bon, ça fait 51 840.', 3, 'v');
         client.sortirTel(false);
-        S.env++; S.gain += 3360; BU.vis++; BU.ven++; BU.gmv += 48000;
+        S.env++; S.gain += 2400; BU.vis++; BU.ven++; BU.gmv += 51840;
         $('buy').classList.add('on');
         majHud(); shot.secousse = .06; }
     } },
@@ -433,8 +433,8 @@ function batir() {
       trace.material.opacity = 0; fx.material.opacity = 0;
       Object.values(halos).forEach((h) => (h.material.opacity = 0));
       plan(V(pMoi.x + 8, 2.8, -3.0), V(pMoi.x, 2.1, cMoi.z), 40, 4.6);
-      narr('Et toi ?', 'Tu n’as rien vendu, et tu as gagné 3 360 francs.',
-           'Sur 48 000 : 3 360 F pour toi, 1 440 F de remise au client, 1 440 F pour Buyticle.');
+      narr('Et toi ?', 'Tu n’as rien vendu, et tu as gagné 2 400 francs.',
+           'Second Life garde ses 48 000 F. Les 13 % sont ajoutés au-dessus : 2 400 F pour toi, 2 400 F de remise, 1 440 F pour Buyticle.');
     },
     up(t) {
       if (t > 5 && !this._a) { this._a = 1;
@@ -453,18 +453,18 @@ function batir() {
       const j = Math.min(26, 1 + Math.floor(t / 1.05));
       if (j !== S.jour) {
         S.jour = j;
-        if (j % 2 === 0) { S.env++; S.gain += 1508; }
+        if (j % 2 === 0) { S.env++; S.gain += 2462; }
         if (j % 2 === 1) S.rec++;
         if (j % 6 === 0) S.perd++;
         S.serv += 2;
         const k = j / 26;
         BU.vis = Math.round(246 * k); BU.ret = Math.round(40 * Math.max(0, k - .35) / .65);
-        BU.ven = Math.round(281 * k); BU.gmv = Math.round(6445000 * k);
+        BU.ven = Math.round(281 * k); BU.gmv = Math.round(6415848 * k);
         majHud();
       }
       if (t > 24 && !this._f) { this._f = 1;
         narr('Fin du mois', '259 clients ont changé de boutique sans quitter le marché.',
-             '5 940 600 F de marchandise vendue, et 246 personnes qui découvrent Buyticle.'); }
+             '5 940 600 F encaissés par les boutiques, et 246 personnes qui découvrent Buyticle.'); }
     } },
 
   /* 16 ─ carte de fin */
